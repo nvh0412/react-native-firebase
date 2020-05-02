@@ -41,12 +41,6 @@ function BannerAd({ unitId, size, requestOptions, ...props }) {
     }
   }, [size]);
 
-  useEffect(() => {
-    if (!BannerAdSize[size] && !sizeRegex.test(size)) {
-      throw new Error("BannerAd: 'size' expected a valid BannerAdSize or custom size string.");
-    }
-  }, [size]);
-
   const parsedRequestOptions = JSON.stringify(requestOptions);
 
   useEffect(() => {
